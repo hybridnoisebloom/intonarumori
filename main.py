@@ -9,15 +9,15 @@ window = sf.RenderWindow(sf.VideoMode(640, 480), "Intonarumori - Development Bui
 # Here we will load all the sounds/samples.
 # We're using sf.Sound rather than sf.Music, so expect that.
 # Also, we're using FLAC as the audio format, because WAV sucks and fuck OGG.
-a = sf.Sound(sf.SoundBuffer.from_file("01.flac")
-b = sf.Sound(sf.SoundBuffer.from_file("02.flac")
-c = sf.Sound(sf.SoundBuffer.from_file("03.flac")
-d = sf.Sound(sf.SoundBuffer.from_file("04.flac")
-e = sf.Sound(sf.SoundBuffer.from_file("05.flac")
-f = sf.Sound(sf.SoundBuffer.from_file("06.flac")
-g = sf.Sound(sf.SoundBuffer.from_file("07.flac")
-h = sf.Sound(sf.SoundBuffer.from_file("08.flac")
-i = sf.Sound(sf.SoundBuffer.from_file("09.flac")
+a = sf.Sound(sf.SoundBuffer.from_file("01.flac"))
+b = sf.Sound(sf.SoundBuffer.from_file("02.flac"))
+c = sf.Sound(sf.SoundBuffer.from_file("03.flac"))
+d = sf.Sound(sf.SoundBuffer.from_file("04.flac"))
+e = sf.Sound(sf.SoundBuffer.from_file("05.flac"))
+f = sf.Sound(sf.SoundBuffer.from_file("06.flac"))
+g = sf.Sound(sf.SoundBuffer.from_file("07.flac"))
+h = sf.Sound(sf.SoundBuffer.from_file("08.flac"))
+i = sf.Sound(sf.SoundBuffer.from_file("09.flac"))
 
 while window.is_open:
     for event in window.events:
@@ -69,3 +69,5 @@ while window.is_open:
                     i.play()
                 else:
                     i.stop() # HAMMER TIME!
+	window.clear()
+	window.display()
