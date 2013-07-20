@@ -24,50 +24,95 @@ while window.is_open:
         if type(event) is sf.CloseEvent:
             window.close()
         if type(event) is sf.KeyEvent:
-            if event.code is sf.Keyboard.A:
+            if event.code is sf.Keyboard.A and event.pressed:
                 if not a.status is sf.SoundSource.PLAYING:
                     a.play()
                 else:
                     a.stop() # HAMMER TIME!
-            elif event.code is sf.Keyboard.S:
+            elif event.code is sf.Keyboard.S and event.pressed: 
                 if not b.status is sf.SoundSource.PLAYING:
                     b.play()
                 else:
                     b.stop() # HAMMER TIME!
-            if event.code is sf.Keyboard.D:
+            elif event.code is sf.Keyboard.D and event.pressed:
                 if not c.status is sf.SoundSource.PLAYING:
                     c.play()
                 else:
                     c.stop() # HAMMER TIME!
-            if event.code is sf.Keyboard.F:
+            elif event.code is sf.Keyboard.F and event.pressed:
                 if not d.status is sf.SoundSource.PLAYING:
                     d.play()
                 else:
                     d.stop() # HAMMER TIME!
-            if event.code is sf.Keyboard.G:
+            if event.code is sf.Keyboard.G and event.pressed:
                 if not e.status is sf.SoundSource.PLAYING:
                     e.play()
                 else:
                     e.stop() # HAMMER TIME!
-            if event.code is sf.Keyboard.H:
+            if event.code is sf.Keyboard.H and event.pressed:
                 if not f.status is sf.SoundSource.PLAYING:
                     f.play()
                 else:
                     f.stop() # HAMMER TIME!
-            if event.code is sf.Keyboard.J:
+            if event.code is sf.Keyboard.J and event.pressed:
                 if not a.status is sf.SoundSource.PLAYING:
                     g.play()
                 else:
                     g.stop() # HAMMER TIME!
-            if event.code is sf.Keyboard.K:
+            if event.code is sf.Keyboard.K and event.pressed:
                 if not h.status is sf.SoundSource.PLAYING:
                     h.play()
                 else:
                     h.stop() # HAMMER TIME!
-            if event.code is sf.Keyboard.L:
+            if event.code is sf.Keyboard.L and event.pressed:
                 if not i.status is sf.SoundSource.PLAYING:
                     i.play()
                 else:
                     i.stop() # HAMMER TIME!
+            if event.code is sf.Keyboard.Q and event.pressed:
+                if not a.loop:
+                    a.loop = True
+                else:
+                    a.loop = False
+            elif event.code is sf.Keyboard.W and event.pressed:
+                if not b.loop:
+                    b.loop = True
+                else:
+                    b.loop = False
+            elif event.code is sf.Keyboard.E and event.pressed:
+                if not c.loop:
+                    c.loop = True
+                else:
+                    c.loop = False
+            elif event.code is sf.Keyboard.R and event.pressed:
+                if not d.loop:
+                    d.loop = True
+                else:
+                    d.loop = False
+            if event.code is sf.Keyboard.T and event.pressed:
+                if not e.loop:
+                    e.loop = True
+                else:
+                    e.loop = False
+            if event.code is sf.Keyboard.Y and event.pressed:
+                if not f.loop:
+                    f.loop = True
+                else:
+                    f.loop = False
+            if event.code is sf.Keyboard.U and event.pressed:
+                if not a.loop:
+                    g.loop = True
+                else:
+                    g.loop = False
+            if event.code is sf.Keyboard.I and event.pressed:
+                if not h.loop:
+                    h.loop = True
+                else:
+                    h.loop = False
+            if event.code is sf.Keyboard.O and event.pressed:
+                if not i.loop:
+                    i.loop = True
+                else:
+                    i.loop = False
 	window.clear()
 	window.display()
