@@ -12,9 +12,3 @@ this, are allowed to aid in the development of this piece of software.
 Licensing
 ------------
 Intonarumori will be licenced under a bilicense of the Mozilla Public License and the Simplified BSD Licence.
-
-
-Other
-------------
-To find out what my plan for the development of Intonarumori is, see the file DESIGN. It serves as my design document
-of sorts.
