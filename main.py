@@ -10,6 +10,7 @@ window = sf.RenderWindow(sf.VideoMode(640, 480), "Intonarumori - Development Bui
 # We're using sf.Sound rather than sf.Music, so expect that.
 # Also, we're using FLAC as the audio format, because WAV sucks and fuck OGG.
 a = sf.Sound(sf.SoundBuffer.from_file("01.flac"))
+a.volume = 60.0
 b = sf.Sound(sf.SoundBuffer.from_file("02.flac"))
 c = sf.Sound(sf.SoundBuffer.from_file("03.flac"))
 d = sf.Sound(sf.SoundBuffer.from_file("04.flac"))
@@ -18,6 +19,9 @@ f = sf.Sound(sf.SoundBuffer.from_file("06.flac"))
 g = sf.Sound(sf.SoundBuffer.from_file("07.flac"))
 h = sf.Sound(sf.SoundBuffer.from_file("08.flac"))
 i = sf.Sound(sf.SoundBuffer.from_file("09.flac"))
+
+j = sf.Text("Intonarumori - Dev Build 0.1a", sf.Font.from_file("libmono.ttf"))
+j.move(sf.Vector2(320-250, 240))
 
 while window.is_open:
     for event in window.events:
@@ -114,5 +118,6 @@ while window.is_open:
                     i.loop = True
                 else:
                     i.loop = False
-	window.clear()
-	window.display()
+    window.clear()
+    window.draw(j)
+    window.display()
