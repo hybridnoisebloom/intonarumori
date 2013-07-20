@@ -33,7 +33,9 @@ while window.is_open:
                     a.play()
                 else:
                     a.stop() # HAMMER TIME!
-            elif event.code is sf.Keyboard.S and event.pressed: 
+            elif event.code is sf.Keyboard.ESCAPE:
+                window.close()
+            elif event.code is sf.Keyboard.S and event.pressed:
                 if not b.status is sf.SoundSource.PLAYING:
                     b.play()
                 else:
@@ -59,7 +61,7 @@ while window.is_open:
                 else:
                     f.stop() # HAMMER TIME!
             if event.code is sf.Keyboard.J and event.pressed:
-                if not a.status is sf.SoundSource.PLAYING:
+                if not g.status is sf.SoundSource.PLAYING:
                     g.play()
                 else:
                     g.stop() # HAMMER TIME!
@@ -104,7 +106,7 @@ while window.is_open:
                 else:
                     f.loop = False
             if event.code is sf.Keyboard.U and event.pressed:
-                if not a.loop:
+                if not g.loop:
                     g.loop = True
                 else:
                     g.loop = False
