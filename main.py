@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
+# ^^^ That's how the shebang should be written. See:
+# http://stackoverflow.com/questions/2429511/why-do-people-write-usr-bin-env-python-on-the-first-line-of-a-python-script
 
 # WARNING
 # I haven't been able to test any of this yet,
