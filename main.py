@@ -20,7 +20,7 @@ g = sf.Sound(sf.SoundBuffer.from_file("07.flac"))
 h = sf.Sound(sf.SoundBuffer.from_file("08.flac"))
 i = sf.Sound(sf.SoundBuffer.from_file("09.flac"))
 
-j = sf.Text("Intonarumori - Dev Build 0.1a", sf.Font.from_file("libmono.ttf"))
+j = sf.Text("Intonarumori - Dev Build 0.2a", sf.Font.from_file("libmono.ttf"))
 j.move(sf.Vector2(320-250, 240))
 
 while window.is_open:
