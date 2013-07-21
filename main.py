@@ -38,7 +38,7 @@ if __name__ == '__main__':
     keys = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
     playkeys = dict(zip([sk.A, sk.S, sk.D, sk.F, sk.G, sk.H, sk.J, sk.K, sk.L], keys))
     loopkeys = dict(zip([sk.Q, sk.W, sk.E, sk.R, sk.T, sk.Y, sk.U, sk.I, sk.O], keys))
-    pitchkeys = dict(zip([sk.Z, sk.X, sk.C, sk.V, sk.B, sk.N, sk.M, sk.P, sk.COMMA], keys))
+    pitchkeys = dict(zip([sk.Z, sk.X, sk.C, sk.V, sk.B, sk.N, sk.M, sk.PERIOD, sk.COMMA], keys))
 
     running = True
 
