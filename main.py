@@ -120,6 +120,51 @@ while window.is_open:
                     i.loop = True
                 else:
                     i.loop = False
+            if event.code is sf.Keyboard.Z and event.pressed:
+                 if a.pitch == 1:
+                    a.pitch = .5
+                 else:
+                    a.pitch = 1
+            elif event.code is sf.Keyboard.X and event.pressed:
+                if b.pitch == 1:
+                    b.pitch = .5
+                else:
+                    b.pitch = 1
+            elif event.code is sf.Keyboard.C and event.pressed:
+                if c.pitch == 1:
+                    c.pitch = .5
+                else:
+                    c.pitch = 1
+            elif event.code is sf.Keyboard.V and event.pressed:
+                if d.pitch == 1:
+                    d.pitch = .5
+                else:
+                    d.pitch = 1
+            if event.code is sf.Keyboard.B and event.pressed:
+                if e.pitch == 1:
+                    e.pitch = .5
+                else:
+                    e.pitch = 1
+            if event.code is sf.Keyboard.N and event.pressed:
+                if f.pitch == 1:
+                    f.pitch = .5
+                else:
+                    f.pitch = 1
+            if event.code is sf.Keyboard.M and event.pressed:
+                if g.pitch == 1:
+                    g.pitch = .5
+                else:
+                    g.pitch = 1
+            if event.code is sf.Keyboard.COMMA and event.pressed:
+                if h.pitch == 1:
+                    h.pitch = .5
+                else:
+                    h.pitch = 1
+            if event.code is sf.Keyboard.PERIOD and event.pressed:
+                if i.pitch == 1:
+                    i.pitch = .5
+                else:
+                    i.pitch = 1
     window.clear()
     window.draw(j)
     window.display()
