@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-# ^^^ That's how the shebang should be written. See:
-# http://stackoverflow.com/questions/2429511/why-do-people-write-usr-bin-env-python-on-the-first-line-of-a-python-script
-
 # WARNING
 # I haven't been able to test any of this yet,
 # but you get the gist of it :)
@@ -17,28 +14,15 @@ if __name__ == '__main__':
     j = sf.Text(versiontext, sf.Font.from_file("libmono.ttf"))
     j.move(sf.Vector2(320-250, 240))
 
-
-    # Here we will load all the sounds/samples.
-    # We're using sf.Sound rather than sf.Music, so expect that.
-    # Also, we're using FLAC as the audio format, because WAV sucks and fuck OGG.
-    sounds = {
-      "a": "01.flac",
-      "b": "02.flac",
-      "c": "03.flac",
-      "d": "04.flac",
-      "e": "05.flac",
-      "f": "06.flac",
-      "g": "07.flac",
-      "h": "08.flac",
-      "i": "09.flac"
-       }
+    # Some magic to create the sounds list. See my previous commit.
+    keys = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+    sounds = dict((v, '%02d.flac' % (i+1)) for i, v in enumerate(keys))
 
     for k, v in sounds.iteritems():
       sounds[k] = sf.Sound(sf.SoundBuffer.from_file(sounds[k]))
       v.volume = 60.0
 
     sk = sf.Keyboard
-    keys = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
     playkeys = dict(zip([sk.A, sk.S, sk.D, sk.F, sk.G, sk.H, sk.J, sk.K, sk.L], keys))
     loopkeys = dict(zip([sk.Q, sk.W, sk.E, sk.R, sk.T, sk.Y, sk.U, sk.I, sk.O], keys))
     pitchkeys = dict(zip([sk.Z, sk.X, sk.C, sk.V, sk.B, sk.N, sk.M, sk.PERIOD, sk.COMMA], keys))
