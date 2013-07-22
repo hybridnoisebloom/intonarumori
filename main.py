@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-# ^^^ That's how the shebang should be written. See:
-# http://stackoverflow.com/questions/2429511/why-do-people-write-usr-bin-env-python-on-the-first-line-of-a-python-script
-
 # WARNING
 # I haven't been able to test any of this yet,
 # but you get the gist of it :)
@@ -17,23 +14,7 @@ if __name__ == '__main__':
     j = sf.Text(versiontext, sf.Font.from_file("libmono.ttf"))
     j.move(sf.Vector2(320-250, 240))
 
-
-    # Here we will load all the sounds/samples.
-    # We're using sf.Sound rather than sf.Music, so expect that.
-    # Also, we're using FLAC as the audio format, because WAV sucks and fuck OGG.
-    
-    # Alternative way of creating the same list - a horrible one liner:
-    # This way is fine, but I'm not using it because the one below is
-    # slightly more readable.
-    # sounds = dict((chr(ord('a') + i), '%02d.flac' % (i+1)) for i in range(0, 10))
-
-    # Actually, this isn't that pretty either..
-    # sounds = dict(zip(
-    #     (chr(i) for i in range(ord('a'), ord('i')+1)),   # Zip a list from 'a' to 'i' together
-    #     ('%02d.flac' % i for i in range(1, 10))          # with one from '01.flac' to '09.flac'.
-    # ))
-    
-    # Now we're talking!
+    # Some magic to create the sounds list. See my previous commit.
     keys = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
     sounds = dict((v, '%02d.flac' % (i+1)) for i, v in enumerate(keys))
 
