@@ -19,8 +19,8 @@ if __name__ == '__main__':
     sounds = dict((v, '%02d.flac' % (i+1)) for i, v in enumerate(keys))
 
     for k, v in sounds.iteritems():
-      sounds[k] = sf.Sound(sf.SoundBuffer.from_file(sounds[k]))
-      v.volume = 60.0
+        sounds[k] = sf.Sound(sf.SoundBuffer.from_file(sounds[k]))
+        v.volume = 60.0
 
     sk = sf.Keyboard
     playkeys = dict(zip([sk.A, sk.S, sk.D, sk.F, sk.G, sk.H, sk.J, sk.K, sk.L], keys))
@@ -30,28 +30,28 @@ if __name__ == '__main__':
     running = True
 
     while running:
-      for event in window.events:
-        if event.type == sf.CloseEvent:
-          running = False
+        for event in window.events:
+            if event.type == sf.CloseEvent:
+                running = False
 
-        elif event.type == sf.KeyEvent and event.pressed:
-          if event.code is sf.Keyboard.ESCAPE:
-            running = False
+            elif event.type == sf.KeyEvent and event.pressed:
+                if event.code is sf.Keyboard.ESCAPE:
+                    running = False
 
-          elif event.code in playkeys:
-            sound = sounds[playkeys[event.code]]
-            sound.play() if sound.status is not sf.SoundSource.PLAYING else sound.stop()
+                elif event.code in playkeys:
+                    sound = sounds[playkeys[event.code]]
+                    sound.play() if sound.status is not sf.SoundSource.PLAYING else sound.stop()
 
-          elif event.code in loopkeys:
-            sound = sounds[loopkeys[event.code]]
-            sound.loop = not sound.loop
+                elif event.code in loopkeys:
+                    sound = sounds[loopkeys[event.code]]
+                    sound.loop = not sound.loop
 
-          elif event.code in pitchkeys:
-            sound = sounds[pitchkeys[event.code]]
-            sound.pitch = 0.5 if sound.pitch == 1 else 1
+                elif event.code in pitchkeys:
+                    sound = sounds[pitchkeys[event.code]]
+                    sound.pitch = 0.5 if sound.pitch == 1 else 1
 
-      window.clear()
-      window.draw(j)
-      window.display()
+        window.clear()
+        window.draw(j)
+        window.display()
 
     window.close()
