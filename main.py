@@ -21,24 +21,27 @@ if __name__ == '__main__':
     # Here we will load all the sounds/samples.
     # We're using sf.Sound rather than sf.Music, so expect that.
     # Also, we're using FLAC as the audio format, because WAV sucks and fuck OGG.
-    sounds = {
-      "a": "01.flac",
-      "b": "02.flac",
-      "c": "03.flac",
-      "d": "04.flac",
-      "e": "05.flac",
-      "f": "06.flac",
-      "g": "07.flac",
-      "h": "08.flac",
-      "i": "09.flac"
-       }
+    
+    # Alternative way of creating the same list - a horrible one liner:
+    # This way is fine, but I'm not using it because the one below is
+    # slightly more readable.
+    # sounds = dict((chr(ord('a') + i), '%02d.flac' % (i+1)) for i in range(0, 10))
+
+    # Actually, this isn't that pretty either..
+    # sounds = dict(zip(
+    #     (chr(i) for i in range(ord('a'), ord('i')+1)),   # Zip a list from 'a' to 'i' together
+    #     ('%02d.flac' % i for i in range(1, 10))          # with one from '01.flac' to '09.flac'.
+    # ))
+    
+    # Now we're talking!
+    keys = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+    sounds = dict((v, '%02d.flac' % (i+1)) for i, v in enumerate(keys))
 
     for k, v in sounds.iteritems():
       sounds[k] = sf.Sound(sf.SoundBuffer.from_file(sounds[k]))
       v.volume = 60.0
 
     sk = sf.Keyboard
-    keys = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
     playkeys = dict(zip([sk.A, sk.S, sk.D, sk.F, sk.G, sk.H, sk.J, sk.K, sk.L], keys))
     loopkeys = dict(zip([sk.Q, sk.W, sk.E, sk.R, sk.T, sk.Y, sk.U, sk.I, sk.O], keys))
     pitchkeys = dict(zip([sk.Z, sk.X, sk.C, sk.V, sk.B, sk.N, sk.M, sk.PERIOD, sk.COMMA], keys))
